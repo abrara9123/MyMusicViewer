@@ -4,4 +4,5 @@ project(MyMusicViewer)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(MyMusicViewer main.cpp
-        MusicStorage.h)
+        MusicStorage.h
+        MusicStorageFeatures.h)
