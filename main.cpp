@@ -6,6 +6,7 @@
 using namespace std;
 
 int main() {
+
     mapStructure* temp = new mapStructure();
 
     string check{};
@@ -22,16 +23,18 @@ int main() {
             cout << "Enter the Song name you wish to remove: " << endl;
             getline(cin,removeName);
             temp->removeSong(removeName);
-
+        }
+        if (check == "View") {
+            temp->viewSongs();
         }
         if (check == "Quit") {
+            cout << "Exiting....." << "\n";
             break;
         }
         cout << "Enter Commands: Add: add a song; Quit: close the program" << endl;
         getline(cin,check);
     }
 
-    temp->print();
 
     return 0;
 }

@@ -6,6 +6,7 @@
 using namespace std;
 #ifndef MYMUSICVIEWER_MUSICSTORAGE_H
 #define MYMUSICVIEWER_MUSICSTORAGE_H
+#include <fstream>
 
 class MusicStorage {
 private:
@@ -15,14 +16,17 @@ private:
     string genre{};
     string artistName{};
 
+
+
 public:
     void addTo(string martistName,string mgenre, string mlength) {
         artistName = martistName;
         genre = mgenre;
         lenght = mlength;
+        //myFile << " Artist: " << artistName << " Genre: " << genre << " Length: " << lenght << "\n";
     }
     void printInfo() {
-        cout << "Artist Name: " << artistName << " Genre: " << genre << " Track Lenght: " << lenght << "\n";
+        cout << " Artist: " << artistName << " Genre: " << genre << " Length: " << lenght << "\n";
     }
 
     void getInput() {

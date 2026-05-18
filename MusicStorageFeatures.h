@@ -38,6 +38,15 @@ public:
         }
 
     }
+
+    void viewSongs() {
+        for (auto [key,pair]: tempOne) {
+            cout << "Title:[" << key << "]";
+            pair.printInfo();
+        }
+    }
+
+
 };
 
 
