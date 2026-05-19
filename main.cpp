@@ -29,6 +29,7 @@ int main() {
         }
         if (check == "Quit") {
             cout << "Exiting....." << "\n";
+
             break;
         }
         cout << "Enter Commands: Add: add a song; Quit: close the program" << endl;

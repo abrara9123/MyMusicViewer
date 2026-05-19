@@ -14,6 +14,7 @@ public:
     void addSong() {
         cout << "Enter the Song Name:" << "\n";
         getline(cin,songName);
+        myFile << songName << endl;
         tempOne[songName].getInput();
     }
 
