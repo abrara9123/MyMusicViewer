@@ -3,6 +3,7 @@
 //
 #include <string>
 #include <unordered_map>
+
 using namespace std;
 #ifndef MYMUSICVIEWER_MUSICSTORAGE_H
 #define MYMUSICVIEWER_MUSICSTORAGE_H
@@ -16,7 +17,7 @@ private:
     string url{};
     string genre{};
     string artistName{};
-    //mapStructure Mapobject;
+
 
 
 
@@ -24,7 +25,7 @@ private:
 public:
     ofstream myFile;
     MusicStorage() {
-        myFile.open("Stored Music.txt",ios::app);
+        myFile.open("Stored Music.txt",ofstream::app);
 
     }
 
@@ -34,17 +35,19 @@ public:
         url = other.url;
         genre = other.genre;
         artistName = other.artistName;
+        myFile.open("Stored Music.txt",ofstream::app);
 
     }
     ~MusicStorage() {
         myFile.close();
     }
-    void addTo(string martistName,string mgenre, string mlength) {
+    void addTo(string martistName,string mgenre, string mlength,string title) {
 
         artistName = martistName;
         genre = mgenre;
         lenght = mlength;
-        //myFile << "Title Track: " << Mapobject.getSongName() << " Artist: " << artistName << " Genre: " << genre << " Length: " << lenght << endl;
+        songName = title;
+        myFile << "Title of Track: "  << songName << " Artist: " << artistName << " Genre: " << genre << " Length: " << lenght << endl;
 
 
     }
@@ -52,7 +55,7 @@ public:
         cout << " Artist: " << artistName << " Genre: " << genre << " Length: " << lenght << "\n";
     }
 
-    void getInput() {
+    void getInput(const string& titleTrack) {
         cout << "Enter Artist Name:  \n";
         getline(cin,artistName);
         cout << "Enter Genre:  \n";
@@ -60,7 +63,7 @@ public:
         cout << "Enter Lenght:  \n";
         getline(cin,lenght);
 
-        addTo(artistName,genre,lenght);
+        addTo(artistName,genre,lenght,titleTrack);
     }
 
 

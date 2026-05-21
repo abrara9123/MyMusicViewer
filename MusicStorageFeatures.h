@@ -5,17 +5,22 @@
 #define MYMUSICVIEWER_MUSICSTORAGEFEATURES_H
 #include  "MusicStorage.h"
 
+
+
 class mapStructure : public MusicStorage {
 private:
     unordered_map<string,MusicStorage> tempOne;
-    string songName{};
+
 
 public:
+    string songName{};
+    mapStructure() {
+        myFile.open("Stored Music.txt",ofstream::app);
+    }
     void addSong() {
         cout << "Enter the Song Name:" << "\n";
         getline(cin,songName);
-        myFile << songName << endl;
-        tempOne[songName].getInput();
+        tempOne[songName].getInput(songName);
     }
 
     void print() {
